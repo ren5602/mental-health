@@ -24,27 +24,27 @@ const features: Feature[] = [
     title: "Mental Health Assessment",
     description:
       "Identify your mental well-being through simple, evidence-based self-assessments.",
-    image: "/images/feature-1.png",
+    image: "/images/feature-1.webp",
   },
   {
     icon: Sprout,
     title: "Guided Mindfulness",
     description:
       "Practice breathing exercises and meditation to reduce stress.",
-    image: "/images/feature-2.png",
+    image: "/images/feature-2.webp",
   },
   {
     icon: SmilePlus,
     title: "Mood Tracker",
     description: "Record your daily emotions and discover patterns over time.",
-    image: "/images/feature-3.png",
+    image: "/images/feature-3.webp",
   },
   {
     icon: UserStar,
     title: "Professional Support",
     description:
       "Connect with licensed therapists whenever you need guidance.",
-    image: "/images/feature-4.png",
+    image: "/images/feature-4.webp",
   },
 ];
 
@@ -55,7 +55,7 @@ export function Features() {
       <div className="absolute inset-0 -z-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/features-bg.png"
+          src="/images/features-bg.webp"
           alt=""
           className="h-full w-full object-cover"
         />

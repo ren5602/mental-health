@@ -17,16 +17,16 @@ type Tile = { src: string; tall: boolean };
 // Right column #12:940 = [img6 415, img4 640, img7 640, img3 415]
 const columns: Tile[][] = [
   [
-    { src: "/images/gallery-1.png", tall: true },
-    { src: "/images/gallery-2.png", tall: true },
-    { src: "/images/about-image.png", tall: false },
-    { src: "/images/gallery-3.png", tall: false },
+    { src: "/images/gallery-1.webp", tall: true },
+    { src: "/images/gallery-2.webp", tall: true },
+    { src: "/images/about-image.webp", tall: false },
+    { src: "/images/gallery-3.webp", tall: false },
   ],
   [
-    { src: "/images/gallery-4.png", tall: false },
-    { src: "/images/gallery-5.png", tall: true },
-    { src: "/images/gallery-6.png", tall: true },
-    { src: "/images/gallery-7.png", tall: false },
+    { src: "/images/gallery-4.webp", tall: false },
+    { src: "/images/gallery-5.webp", tall: true },
+    { src: "/images/gallery-6.webp", tall: true },
+    { src: "/images/gallery-7.webp", tall: false },
   ],
 ];
 

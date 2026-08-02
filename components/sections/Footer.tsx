@@ -27,11 +27,11 @@ const linkGroups: { title: string; links: string[] }[] = [
 ];
 
 const avatars = [
-  "/images/avatar-1.png",
-  "/images/avatar-2.png",
-  "/images/avatar-3.png",
-  "/images/avatar-4.png",
-  "/images/avatar-5.png",
+  "/images/avatar-1.webp",
+  "/images/avatar-2.webp",
+  "/images/avatar-3.webp",
+  "/images/avatar-4.webp",
+  "/images/avatar-5.webp",
 ];
 
 const socials: { icon: React.FC<React.SVGProps<SVGSVGElement>>; label: string; href: string }[] = [
@@ -95,7 +95,7 @@ export function Footer() {
             {/* Logo mark */}
             <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-teal">
               <Image
-                src="/images/logo-icon.png"
+                src="/images/logo-icon.webp"
                 alt="MentalZee logo"
                 width={24}
                 height={24}

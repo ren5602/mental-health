@@ -30,7 +30,7 @@ export function Hero() {
           loop
           playsInline
           preload="auto"
-          poster="/images/hero-bg.png"
+          poster="/images/hero-bg.webp"
         >
           <source src="/images/hero-video-bg.webm" type="video/webm" />
         </video>

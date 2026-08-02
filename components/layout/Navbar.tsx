@@ -45,7 +45,7 @@ export function Navbar() {
           aria-label="MentalZee home"
         >
           <Image
-            src="/images/logo-icon.png"
+            src="/images/logo-icon.webp"
             alt="MentalZee logo"
             width={24}
             height={24}

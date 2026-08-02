@@ -12,7 +12,7 @@ export function About() {
       <div className="absolute inset-0 -z-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/about-bg.png"
+          src="/images/about-bg.webp"
           alt=""
           className="h-full w-full object-cover"
         />
@@ -64,7 +64,7 @@ export function About() {
           className="relative h-[420px] overflow-hidden rounded-[16px] sm:h-[520px] md:h-[640px] lg:h-[738px]"
         >
           <motion.img
-            src="/images/about-image.png"
+            src="/images/about-image.webp"
             alt="A calm, welcoming space for mental wellness"
             className="h-full w-full object-cover"
             initial={reduce ? { y: 0 } : { y: "-6%" }}

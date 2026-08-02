@@ -18,49 +18,49 @@ const testimonials: Testimonial[] = [
       "This platform has become part of my daily routine. The mood tracker and mindfulness exercises help me pause, reflect, and manage stress more effectively.",
     name: "Emily Carter",
     role: "Marketing Specialist",
-    image: "/images/testimonial-1.png",
+    image: "/images/testimonial-1.webp",
   },
   {
     quote:
       "The self-assessment gave me a better understanding of how I was feeling, and the personalized recommendations made it easier to build healthier habits.",
     name: "Michael Thompson",
     role: "Software Engineer",
-    image: "/images/testimonial-2.png",
+    image: "/images/testimonial-2.webp",
   },
   {
     quote:
       "I appreciate how simple and welcoming everything feels. From guided breathing sessions to progress tracking, the platform has helped me stay more mindful every day.",
     name: "Sophia Williams",
     role: "University Student",
-    image: "/images/testimonial-3.png",
+    image: "/images/testimonial-3.webp",
   },
   {
     quote:
       "The guided meditation sessions have become my favorite way to unwind after work. Even a few minutes each day make a noticeable difference.",
     name: "Daniel Lee",
     role: "Project Manager",
-    image: "/images/testimonial-4.png",
+    image: "/images/testimonial-4.webp",
   },
   {
     quote:
       "I was looking for a simple way to take better care of my mental well-being, and this platform gave me the structure and encouragement I needed to stay consistent.",
     name: "Emma Johnson",
     role: "Freelance Writer",
-    image: "/images/testimonial-5.png",
+    image: "/images/testimonial-5.webp",
   },
   {
     quote:
       "This platform helped me manage my daily anxiety so much better. The personalized guidance and mood tracker made a huge difference in my routine.",
     name: "Sarah Jenkins",
     role: "UX Designer",
-    image: "/images/testimonial-6.png",
+    image: "/images/testimonial-6.webp",
   },
   {
     quote:
       "Building a daily gratitude habit used to feel challenging, but the intuitive assessment and prompts here made it effortless and deeply rewarding.",
     name: "Michael Chen",
     role: "Product Designer",
-    image: "/images/testimonial-7.png",
+    image: "/images/testimonial-7.webp",
   },
 ];
 
@@ -119,7 +119,7 @@ export function Testimonial() {
       <div className="absolute inset-0 -z-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/testimonial-bg.png"
+          src="/images/testimonial-bg.webp"
           alt=""
           className="h-full w-full object-cover"
         />
