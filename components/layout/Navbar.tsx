@@ -47,9 +47,9 @@ export function Navbar() {
           <Image
             src="/images/logo-icon.png"
             alt="MentalZee logo"
-            width={30}
-            height={30}
-            className="object-contain object-center translate-x-[2px]"
+            width={24}
+            height={24}
+            className="object-contain object-center"
           />
         </a>
 
