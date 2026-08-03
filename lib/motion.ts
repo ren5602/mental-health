@@ -12,6 +12,15 @@ export const fadeUp: Variants = {
   },
 };
 
+export const slideRight: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: easeOutExpo },
+  },
+};
+
 export const fadeDown: Variants = {
   hidden: { opacity: 0, y: -24 },
   visible: {

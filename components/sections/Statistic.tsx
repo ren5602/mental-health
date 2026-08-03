@@ -18,18 +18,7 @@ const stats: Stat[] = [
 
 export function Statistic() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background image + overlay */}
-      <div className="absolute inset-0 -z-10">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/statistic-bg.webp"
-          alt=""
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-overlay-50" />
-      </div>
-
+    <section className="relative bg-darker">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-20 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">
         {/* Title block (left aligned) */}
         <motion.div

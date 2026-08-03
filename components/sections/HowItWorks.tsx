@@ -25,7 +25,7 @@ type Step = {
 const steps: Step[] = [
   {
     icon: UserCheck,
-    title: "Create Your Account",
+    title: "Create Your\nAccount",
     description:
       "Sign up in just a few minutes to access personalized mental wellness tools and resources.",
   },
@@ -43,7 +43,7 @@ const steps: Step[] = [
   },
   {
     icon: SmilePlus,
-    title: "Track Your Progress",
+    title: "Track Your\nProgress",
     description:
       "Monitor your mood, celebrate your growth, and build healthy habits with insights that evolve over time.",
   },
@@ -51,18 +51,7 @@ const steps: Step[] = [
 
 export function HowItWorks() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background image + overlay */}
-      <div className="absolute inset-0 -z-10">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/howitworks-bg.webp"
-          alt=""
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-overlay-50" />
-      </div>
-
+    <section className="relative bg-darker">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-20 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">
         {/* Section title */}
         <motion.div
@@ -88,9 +77,7 @@ export function HowItWorks() {
             variants={fadeUp}
             className="max-w-2xl font-sans text-lg font-normal leading-[1.5] text-white/85"
           >
-            Getting started is simple. Follow these four steps to discover
-            personalized support, build healthier habits, and improve your
-            mental well-being at your own pace.
+            Four simple steps to personalized support, healthier habits, and better mental well-being.
           </motion.p>
         </motion.div>
 
@@ -105,7 +92,7 @@ export function HowItWorks() {
           {/* Draw-on-scroll connecting line (desktop) */}
           <motion.div
             aria-hidden
-            className="absolute left-0 right-0 top-12 hidden h-px bg-teal/30 lg:block"
+            className="absolute left-0 right-0 top-12 hidden h-px bg-white/30 lg:block"
             initial={{ scaleX: 0, originX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={viewportOnce}
@@ -123,7 +110,7 @@ export function HowItWorks() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="flex flex-wrap items-center justify-center gap-4"
+          className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <Button variant="primary">Begin Assessment</Button>
           <Button variant="outline">Discover More</Button>
@@ -144,20 +131,17 @@ function StepItem({ step, index }: { step: Step; index: number }) {
       <motion.span
         whileHover={{ scale: 1.08, rotate: -4 }}
         transition={{ type: "spring", stiffness: 350, damping: 18 }}
-        className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full bg-teal/15 text-teal ring-1 ring-teal/30 backdrop-blur-sm"
+        className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/30 backdrop-blur-sm"
       >
         <Icon className="h-10 w-10" strokeWidth={1.8} />
-        <span className="absolute -right-1 -top-1 flex h-7 w-7 items-center justify-center rounded-full bg-teal font-sans text-sm font-bold text-white">
+        <span className="absolute -right-1 -top-1 flex h-7 w-7 items-center justify-center rounded-full bg-white font-sans text-sm font-bold text-teal">
           {index + 1}
         </span>
       </motion.span>
       <div className="flex flex-col gap-4">
-        <h3 className="font-display text-2xl font-medium leading-[1.3] text-white">
+        <h3 className="font-display text-2xl font-medium leading-[1.3] text-white whitespace-pre-line">
           {step.title}
         </h3>
-        <p className="max-w-xs font-sans text-base font-normal leading-[1.5] text-white/80">
-          {step.description}
-        </p>
       </div>
     </motion.div>
   );

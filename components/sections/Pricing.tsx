@@ -96,7 +96,7 @@ export function Pricing() {
         >
           <source src="/images/hero-video-bg.webm" type="video/webm" />
         </video>
-        <div className="absolute inset-0 bg-overlay-50" />
+        <div className="absolute inset-0 bg-overlay-75" />
       </motion.div>
 
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-20 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { slideRight, staggerContainer, viewportOnce } from "@/lib/motion";
 
 export function Header() {
   return (
@@ -26,11 +26,11 @@ export function Header() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="flex max-w-3xl flex-col gap-8"
+          className="flex max-w-3xl flex-col gap-8 border-l border-white/15 pl-8"
         >
           {/* Eyebrow */}
           <motion.span
-            variants={fadeUp}
+            variants={slideRight}
             className="font-sans text-base font-light tracking-[0.3em] text-white/85 uppercase"
           >
             A Safe Space
@@ -38,7 +38,7 @@ export function Header() {
 
           {/* Headline */}
           <motion.h2
-            variants={fadeUp}
+            variants={slideRight}
             className="font-display text-[2rem] leading-[1.2] font-semibold tracking-[-0.01em] text-white sm:text-4xl md:text-[2.75rem] lg:text-[3.25rem]"
           >
             Everyone Deserves a Place to Feel Heard and Supported.
@@ -46,7 +46,7 @@ export function Header() {
 
           {/* Body */}
           <motion.p
-            variants={fadeUp}
+            variants={slideRight}
             className="max-w-2xl font-sans text-lg font-medium leading-[1.5] text-white/85"
           >
             Whether you&apos;re managing daily stress or seeking professional

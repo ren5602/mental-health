@@ -10,7 +10,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[824px] flex-col justify-center overflow-hidden"
+      className="relative flex min-h-[600px] flex-col justify-center overflow-hidden sm:min-h-[700px] lg:min-h-[824px]"
     >
       {/* Background video with breathing zoom (signature element) */}
       <motion.div
@@ -40,27 +40,30 @@ export function Hero() {
       {/* Right-edge hairline rule like the Figma column */}
       <div className="absolute inset-y-0 right-0 w-px bg-white/10" />
 
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-12 px-6 py-32 sm:px-10 md:px-12 lg:py-40">
+      <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-12 px-6 py-20 text-center sm:px-10 sm:py-28 md:px-12 md:py-32 lg:py-40">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="flex max-w-[560px] flex-col gap-8"
+          className="flex max-w-[560px] flex-col items-center gap-8 text-center"
         >
           {/* Eyebrow */}
-          <motion.span
+          {/* <motion.span
             variants={fadeUp}
             className="font-sans text-base font-light tracking-[0.3em] text-white/85 uppercase"
           >
             Personalized Mental Healthcare
-          </motion.span>
+          </motion.span> */}
 
           {/* Headline */}
           <motion.h1
             variants={fadeUp}
-            className="font-display text-[2.75rem] leading-[1.15] font-semibold tracking-[-0.01em] text-white sm:text-5xl md:text-[3.25rem] lg:text-[3.5rem]"
+            className="font-display text-[1.875rem] leading-[1.15] font-semibold tracking-[-0.01em] text-white sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.5rem]"
           >
-            Find Calm, Build Balance, <span className="text-teal">Live Better</span>
+            <span className="sm:whitespace-nowrap">Find Calm Build Balance</span>{" "}
+            <br className="block sm:hidden" />
+            <br className="hidden sm:block" />
+            <span>Live Better</span>
           </motion.h1>
 
           {/* Subtext */}
@@ -73,7 +76,7 @@ export function Hero() {
           </motion.p>
 
           {/* CTA pill */}
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className="flex justify-center">
             <motion.a
               href="#features"
               whileHover={{ scale: 1.04 }}
