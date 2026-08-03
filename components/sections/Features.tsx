@@ -50,18 +50,7 @@ const features: Feature[] = [
 
 export function Features() {
   return (
-    <section id="features" className="relative overflow-hidden">
-      {/* Background image + overlay */}
-      <div className="absolute inset-0 -z-10">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/features-bg.webp"
-          alt=""
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-overlay-50" />
-      </div>
-
+    <section id="features" className="relative bg-darker">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-16 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">
         {/* Section title (centered) */}
         <motion.div
@@ -79,7 +68,7 @@ export function Features() {
           </motion.span>
           <motion.h2
             variants={fadeUp}
-            className="max-w-3xl font-display text-[2rem] leading-[1.2] font-semibold tracking-[-0.006em] text-white sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem]"
+            className="max-w-3xl font-display text-[1.625rem] leading-[1.2] font-semibold tracking-[-0.006em] text-white sm:text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]"
           >
             Everything You Need to Support Your Mental Well-being
           </motion.h2>
@@ -93,14 +82,14 @@ export function Features() {
         </motion.div>
 
         {/* Two-row layout: row 1 asymmetric (fill + 410px), row 2 symmetric */}
-        <div className="flex w-full flex-col gap-6">
+        <div className="flex w-full flex-col gap-3">
           {/* Row 1: Card 1 (fill) + Card 2 (410px) — desktop asymmetric */}
           <motion.div
             variants={staggerFast}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="flex h-[420px] flex-col gap-6 lg:h-[500px] lg:flex-row"
+            className="flex h-[340px] flex-col gap-3 sm:h-[400px] lg:h-[500px] lg:flex-row"
           >
             <FeatureCard feature={features[0]} className="flex-1" />
             <FeatureCard
@@ -115,7 +104,7 @@ export function Features() {
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="flex h-[420px] flex-col gap-6 lg:h-[500px] lg:flex-row"
+            className="flex h-[340px] flex-col gap-3 sm:h-[400px] lg:h-[500px] lg:flex-row"
           >
             <FeatureCard feature={features[2]} className="flex-1" />
             <FeatureCard feature={features[3]} className="flex-1" />
@@ -139,7 +128,7 @@ function FeatureCard({
       variants={scaleIn}
       whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className={`group relative h-full overflow-hidden rounded-[16px] ${className ?? ""}`}
+      className={`group relative h-full overflow-hidden ${className ?? ""}`}
     >
       {/* Full-card background image (clean, no global overlay) */}
       <div className="absolute inset-0">
@@ -152,12 +141,12 @@ function FeatureCard({
       </div>
 
       {/* Bottom content panel (280px overlay, centered content — Figma EL-8e92daf4) */}
-      <div className="absolute inset-x-0 bottom-0 flex h-[280px] flex-col justify-center gap-5 bg-overlay-50 p-8 lg:p-12">
+      <div className="absolute inset-x-0 bottom-0 flex h-[200px] flex-col justify-center gap-5 bg-overlay-50 p-6 sm:h-[240px] sm:p-8 lg:h-[280px] lg:p-12">
         {/* Icon */}
         <motion.span
           whileHover={{ scale: 1.1, rotate: -3 }}
           transition={{ type: "spring", stiffness: 350, damping: 18 }}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-teal/20 text-teal ring-1 ring-teal/40 backdrop-blur-sm"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 text-white ring-1 ring-white/40 backdrop-blur-sm"
         >
           <Icon className="h-7 w-7" strokeWidth={2.2} />
         </motion.span>

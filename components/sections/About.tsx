@@ -7,18 +7,7 @@ export function About() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="about" className="relative overflow-hidden">
-      {/* Background image + overlay */}
-      <div className="absolute inset-0 -z-10">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/about-bg.webp"
-          alt=""
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-overlay-50" />
-      </div>
-
+    <section id="about" className="relative bg-darker">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-20 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">
         {/* Two-column text */}
         <motion.div
@@ -61,7 +50,7 @@ export function About() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={viewportOnce}
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative h-[420px] overflow-hidden rounded-[16px] sm:h-[520px] md:h-[640px] lg:h-[738px]"
+          className="relative h-[420px] overflow-hidden sm:h-[520px] md:h-[640px] lg:h-[738px]"
         >
           <motion.img
             src="/images/about-image.webp"

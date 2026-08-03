@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import { Button } from "@/components/primitives/Button";
 import {
   fadeUp,
@@ -137,11 +137,31 @@ function AccordionItem({
           {faq.q}
         </span>
         <motion.span
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="ml-auto flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal/15 text-teal"
+          className="ml-auto flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white"
         >
-          <ChevronDown className="h-5 w-5" strokeWidth={2.2} />
+          <AnimatePresence initial={false} mode="wait">
+            {isOpen ? (
+              <motion.span
+                key="x"
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <X className="h-5 w-5" strokeWidth={2.2} />
+              </motion.span>
+            ) : (
+              <motion.span
+                key="plus"
+                initial={{ opacity: 0, rotate: 90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: -90 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <Plus className="h-5 w-5" strokeWidth={2.2} />
+              </motion.span>
+            )}
+          </AnimatePresence>
         </motion.span>
       </button>
       <AnimatePresence initial={false}>

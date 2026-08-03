@@ -58,7 +58,7 @@ export function Gallery() {
         </motion.div>
 
         {/* Two-column masonry (Figma: row → 2 columns, each stacked) */}
-        <div className="flex flex-col gap-8 lg:flex-row lg:gap-8">
+        <div className="flex flex-col gap-3 lg:flex-row lg:gap-3">
           {columns.map((col, ci) => (
             <motion.div
               key={ci}
@@ -66,7 +66,7 @@ export function Gallery() {
               initial="hidden"
               whileInView="visible"
               viewport={viewportOnce}
-              className="flex w-full flex-col gap-8 lg:w-1/2"
+              className="flex w-full flex-col gap-3 lg:w-1/2"
             >
               {col.map((tile, ti) => (
                 <Tile key={`${ci}-${ti}`} tile={tile} />
@@ -85,7 +85,7 @@ function Tile({ tile }: { tile: Tile }) {
       variants={scaleIn}
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className="group relative overflow-hidden rounded-[16px]"
+      className="group relative overflow-hidden"
     >
       <div
         className={[
