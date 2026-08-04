@@ -21,29 +21,29 @@ type Feature = {
 const features: Feature[] = [
   {
     icon: ListPlus,
-    title: "Mental Health Assessment",
+    title: "Mental Clarity Assistant",
     description:
-      "Identify your mental well-being through simple, evidence-based self-assessments.",
+      "Chat with an AI companion anytime for emotional support, thoughtful guidance, and practical wellness suggestions whenever you need them.",
     image: "/images/feature-1.webp",
   },
   {
     icon: Sprout,
-    title: "Guided Mindfulness",
+    title: "Guided Meditation",
     description:
-      "Practice breathing exercises and meditation to reduce stress.",
+      "Reduce stress and improve focus through guided meditation sessions designed to help you relax, breathe, and reconnect with yourself.",
     image: "/images/feature-2.webp",
   },
   {
     icon: SmilePlus,
-    title: "Mood Tracker",
-    description: "Record your daily emotions and discover patterns over time.",
+    title: "Mood Tracking",
+    description: "Record your daily mood, identify emotional patterns, and gain meaningful insights that help you better understand yourself over time.",
     image: "/images/feature-3.webp",
   },
   {
     icon: UserStar,
-    title: "Professional Support",
+    title: "Online Counseling",
     description:
-      "Connect with licensed therapists whenever you need guidance.",
+      "Connect with licensed mental health professionals through secure online sessions, making quality care more accessible whenever you need it.",
     image: "/images/feature-4.webp",
   },
 ];
@@ -140,8 +140,8 @@ function FeatureCard({
         />
       </div>
 
-      {/* Bottom content panel (280px overlay, centered content — Figma EL-8e92daf4) */}
-      <div className="absolute inset-x-0 bottom-0 flex h-[200px] flex-col justify-center gap-5 bg-overlay-50 p-6 sm:h-[240px] sm:p-8 lg:h-[280px] lg:p-12">
+      {/* Full-card overlay with bottom-aligned content */}
+      <div className="absolute inset-0 flex flex-col justify-end gap-5 bg-overlay-50 p-6 sm:p-8 lg:p-12">
         {/* Icon */}
         <motion.span
           whileHover={{ scale: 1.1, rotate: -3 }}
