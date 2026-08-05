@@ -1,14 +1,25 @@
 "use client";
 
+import { useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { easeOutExpo, fadeUp, staggerContainer } from "@/lib/motion";
+import { useScrollNextSection } from "@/lib/useScrollNextSection";
 
-export function Hero() {
+interface HeroProps {
+  /** id of the section to auto-scroll to when scrolling down from the hero */
+  nextSectionId?: string;
+}
+
+export function Hero({ nextSectionId = "#userneeds" }: HeroProps) {
   const reduce = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useScrollNextSection(sectionRef, nextSectionId, !reduce);
 
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="relative flex min-h-[600px] min-h-dvh flex-col justify-center overflow-hidden"
     >
@@ -81,7 +92,7 @@ export function Hero() {
             variants={fadeUp}
             className="max-w-[540px] font-sans text-lg font-medium leading-[1.5] text-white/85"
           >
-            We don't just help you feel better today, we help you build habits
+            We don&apos;t just help you feel better today, we help you build habits
             that support your mentality for the future.
           </motion.p>
 

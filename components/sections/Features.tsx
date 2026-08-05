@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ListPlus, Sprout, SmilePlus, UserStar } from "lucide-react";
+import { ListPlus, Sprout, SmilePlus, UserStar, MessageCircle, MessageCircleCheck } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import {
   fadeUp,
@@ -20,7 +20,7 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    icon: ListPlus,
+    icon: MessageCircleCheck,
     title: "Mental Clarity Assistant",
     description:
       "Chat with an AI companion anytime for emotional support, thoughtful guidance, and practical wellness suggestions whenever you need them.",
@@ -37,7 +37,7 @@ const features: Feature[] = [
     icon: SmilePlus,
     title: "Mood Tracking",
     description: "Record your daily mood, identify emotional patterns, and gain meaningful insights that help you better understand yourself over time.",
-    image: "/images/feature-3.webp",
+    image: "/images/feature-3.1.webp",
   },
   {
     icon: UserStar,
@@ -70,14 +70,13 @@ export function Features() {
             variants={fadeUp}
             className="max-w-3xl font-display text-[1.625rem] leading-[1.2] font-semibold tracking-[-0.006em] text-white sm:text-[2rem] md:text-[2.5rem] lg:text-[2.75rem]"
           >
-            Everything You Need to Support Your Mental Well-being
+            Everything You Need to Support Your Mentality
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="max-w-2xl font-sans text-lg font-normal leading-[1.5] text-white/85"
           >
-            Discover tools designed to help you understand your emotions,
-            reduce stress, and build healthier habits every day.
+            From self-reflection to professional guidance, discover tools that help you navigate life&apos;s challenges with greater confidence and clarity
           </motion.p>
         </motion.div>
 
@@ -128,7 +127,7 @@ function FeatureCard({
       variants={scaleIn}
       whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className={`group relative h-full overflow-hidden ${className ?? ""}`}
+      className={`group relative h-full overflow-hidden rounded-[16px] ${className ?? ""}`}
     >
       {/* Full-card background image (clean, no global overlay) */}
       <div className="absolute inset-0">

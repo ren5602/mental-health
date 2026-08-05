@@ -51,7 +51,7 @@ const steps: Step[] = [
 
 export function HowItWorks() {
   return (
-    <section className="relative bg-darker">
+    <section className="relative bg-[#363331]">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-20 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">
         {/* Section title */}
         <motion.div
