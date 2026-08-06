@@ -18,7 +18,7 @@ const stats: Stat[] = [
 
 export function Statistic() {
   return (
-    <section className="relative bg-darker">
+    <section className="relative bg-[#363331]">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-20 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">
         {/* Title block (left aligned) */}
         <motion.div
@@ -28,12 +28,6 @@ export function Statistic() {
           viewport={viewportOnce}
           className="flex flex-col gap-4"
         >
-          <motion.span
-            variants={fadeUp}
-            className="font-sans text-base font-light tracking-[0.3em] text-white/85 uppercase"
-          >
-            Trusted by Thousands
-          </motion.span>
           <motion.h2
             variants={fadeUp}
             className="max-w-xl font-display text-[2rem] leading-[1.2] font-semibold tracking-[-0.006em] text-white sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem]"

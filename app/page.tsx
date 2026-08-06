@@ -4,6 +4,7 @@ import { UserNeeds } from "@/components/sections/UserNeeds";
 import { Header } from "@/components/sections/Header";
 import { Features } from "@/components/sections/Features";
 import { HowItWorks } from "@/components/sections/HowItWorks";
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Statistic } from "@/components/sections/Statistic";
 import { Testimonial } from "@/components/sections/Testimonial";
 import { Pricing } from "@/components/sections/Pricing";
@@ -22,6 +23,7 @@ export default function Home() {
         {/* <Header /> */}
         <Features />
         <HowItWorks />
+        {/* <WhyChooseUs /> */}
         <Statistic />
         <Testimonial />
         <Pricing />

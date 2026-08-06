@@ -123,7 +123,7 @@ export function Hero({ nextSectionId = "#userneeds" }: HeroProps) {
       >
         <span className="h-px flex-1 bg-white/20" />
         <span className="font-sans text-sm font-light tracking-[0.3em] text-white/75 uppercase">
-          Calm &amp; Peaceful
+          Free to Start
         </span>
         <span className="h-px flex-1 bg-white/20" />
       </motion.div>
