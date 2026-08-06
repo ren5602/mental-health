@@ -1,51 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  UserCheck,
-  ListChecks,
-  Sparkles,
-  SmilePlus,
-  type LucideIcon,
-} from "lucide-react";
-import { Button } from "@/components/primitives/Button";
-import {
-  fadeUp,
-  scaleIn,
-  staggerContainer,
-  viewportOnce,
-} from "@/lib/motion";
+import HowItWorksCards from "@/components/ui/how-it-works";
+import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
-type Step = {
-  icon: LucideIcon;
+const steps: {
   title: string;
   description: string;
-};
-
-const steps: Step[] = [
+  colorTheme: "orange" | "blue" | "purple" | "teal";
+}[] = [
   {
-    icon: UserCheck,
-    title: "Create Your\nAccount",
+    title: "Create Your Account",
     description:
-      "Sign up in just a few minutes to access personalized mental wellness tools and resources.",
+      "Join in just a few moments and personalize your wellness experience to match your goals and daily routine",
+    colorTheme: "teal",
   },
   {
-    icon: ListChecks,
-    title: "Complete Your Assessment",
+    title: "Explore Daily Wellness Tools",
     description:
-      "Answer a few simple questions so we can better understand your emotional well-being and personalize your experience.",
+      "Complete a quick self-assessment, chat with the Mental Clarity Assistant, and enjoy guided meditation sessions tailored to your needs",
+    colorTheme: "blue",
   },
   {
-    icon: Sparkles,
-    title: "Get Personalized Guidance",
+    title: "Get Support When You Need It",
     description:
-      "Receive tailored recommendations, mindfulness exercises, and professional support based on your assessment.",
-  },
-  {
-    icon: SmilePlus,
-    title: "Track Your\nProgress",
-    description:
-      "Monitor your mood, celebrate your growth, and build healthy habits with insights that evolve over time.",
+      "When you need deeper guidance, easily connect with licensed professionals through secure online counseling",
+    colorTheme: "orange",
   },
 ];
 
@@ -71,14 +51,14 @@ export function HowItWorks() {
             variants={fadeUp}
             className="max-w-3xl font-display text-[2rem] leading-[1.2] font-semibold tracking-[-0.006em] text-white sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem]"
           >
-            Start Your Mental Wellness Journey in Four Simple Steps
+            Start Your Wellness Journey in Three Simple Steps
           </motion.h2>
-          <motion.p
+          {/* <motion.p
             variants={fadeUp}
             className="max-w-2xl font-sans text-lg font-normal leading-[1.5] text-white/85"
           >
-            Four simple steps to personalized support, healthier habits, and better mental well-being.
-          </motion.p>
+            Getting started is simple. Follow these easy steps to understand your emotions, build healthier habits, and access support whenever you need it.
+          </motion.p> */}
         </motion.div>
 
         {/* Steps with connecting line */}
@@ -87,62 +67,11 @@ export function HowItWorks() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="relative grid w-full grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+          className="w-full"
         >
-          {/* Draw-on-scroll connecting line (desktop) */}
-          <motion.div
-            aria-hidden
-            className="absolute left-0 right-0 top-12 hidden h-px bg-white/30 lg:block"
-            initial={{ scaleX: 0, originX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={viewportOnce}
-            transition={{ duration: 1.4, ease: "easeOut", delay: 0.3 }}
-          />
-
-          {steps.map((s, i) => (
-            <StepItem key={s.title} step={s} index={i} />
-          ))}
-        </motion.div>
-
-        {/* CTAs */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
-          <Button variant="primary">Begin Assessment</Button>
-          <Button variant="outline">Discover More</Button>
+          <HowItWorksCards features={steps} />
         </motion.div>
       </div>
     </section>
-  );
-}
-
-function StepItem({ step, index }: { step: Step; index: number }) {
-  const Icon = step.icon;
-  return (
-    <motion.div
-      variants={scaleIn}
-      className="relative flex flex-col items-center gap-6 text-center"
-    >
-      {/* Number badge sits on the connecting line */}
-      <motion.span
-        whileHover={{ scale: 1.08, rotate: -4 }}
-        transition={{ type: "spring", stiffness: 350, damping: 18 }}
-        className="relative z-10 flex h-24 w-24 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/30 backdrop-blur-sm"
-      >
-        <Icon className="h-10 w-10" strokeWidth={1.8} />
-        <span className="absolute -right-1 -top-1 flex h-7 w-7 items-center justify-center rounded-full bg-white font-sans text-sm font-bold text-teal">
-          {index + 1}
-        </span>
-      </motion.span>
-      <div className="flex flex-col gap-4">
-        <h3 className="font-display text-2xl font-medium leading-[1.3] text-white whitespace-pre-line">
-          {step.title}
-        </h3>
-      </div>
-    </motion.div>
   );
 }

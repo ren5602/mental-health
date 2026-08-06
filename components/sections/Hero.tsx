@@ -1,16 +1,27 @@
 "use client";
 
+import { useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { easeOutExpo, fadeUp, staggerContainer } from "@/lib/motion";
+import { useScrollNextSection } from "@/lib/useScrollNextSection";
 
-export function Hero() {
+interface HeroProps {
+  /** id of the section to auto-scroll to when scrolling down from the hero */
+  nextSectionId?: string;
+}
+
+export function Hero({ nextSectionId = "#userneeds" }: HeroProps) {
   const reduce = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useScrollNextSection(sectionRef, nextSectionId, !reduce);
 
   return (
     <section
+      ref={sectionRef}
       id="home"
-      className="relative flex min-h-[600px] flex-col justify-center overflow-hidden sm:min-h-[700px] lg:min-h-[824px]"
+      className="relative flex min-h-[600px] min-h-dvh flex-col justify-center overflow-hidden"
     >
       {/* Background video with breathing zoom (signature element) */}
       <motion.div
@@ -20,7 +31,15 @@ export function Hero() {
         transition={
           reduce
             ? { duration: 1 }
-            : { scale: { duration: 18, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }, opacity: { duration: 1.2, ease: easeOutExpo } }
+            : {
+                scale: {
+                  duration: 18,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                },
+                opacity: { duration: 1.2, ease: easeOutExpo },
+              }
         }
       >
         <video
@@ -40,7 +59,7 @@ export function Hero() {
       {/* Right-edge hairline rule like the Figma column */}
       <div className="absolute inset-y-0 right-0 w-px bg-white/10" />
 
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-12 px-6 py-20 text-center sm:px-10 sm:py-28 md:px-12 md:py-32 lg:py-40">
+      <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-12 px-6 py-16 text-center sm:px-10 sm:py-20 md:px-12 md:py-28 lg:py-32">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -60,7 +79,9 @@ export function Hero() {
             variants={fadeUp}
             className="font-display text-[1.875rem] leading-[1.15] font-semibold tracking-[-0.01em] text-white sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.5rem]"
           >
-            <span className="sm:whitespace-nowrap">Find Calm Build Balance</span>{" "}
+            <span className="sm:whitespace-nowrap">
+              Find Calm Build Balance
+            </span>{" "}
             <br className="block sm:hidden" />
             <br className="hidden sm:block" />
             <span>Live Better</span>
@@ -71,8 +92,8 @@ export function Hero() {
             variants={fadeUp}
             className="max-w-[540px] font-sans text-lg font-medium leading-[1.5] text-white/85"
           >
-            A peaceful space to care for your mind through personalized
-            guidance, mindfulness, and professional support.
+            We don&apos;t just help you feel better today, we help you build habits
+            that support your mentality for the future.
           </motion.p>
 
           {/* CTA pill */}
@@ -102,7 +123,7 @@ export function Hero() {
       >
         <span className="h-px flex-1 bg-white/20" />
         <span className="font-sans text-sm font-light tracking-[0.3em] text-white/75 uppercase">
-          Calm &amp; Peaceful
+          Free to Start
         </span>
         <span className="h-px flex-1 bg-white/20" />
       </motion.div>
