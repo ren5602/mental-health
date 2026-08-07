@@ -99,7 +99,7 @@ export function Hero({ nextSectionId = "#userneeds" }: HeroProps) {
           {/* CTA pill */}
           <motion.div variants={fadeUp} className="flex justify-center">
             <motion.a
-              href="#features"
+              href="#userneeds"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 400, damping: 22 }}
