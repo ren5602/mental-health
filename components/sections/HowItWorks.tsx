@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import HowItWorksCards from "@/components/ui/how-it-works";
+import Particles from "@/components/ui/particles";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
 const steps: {
@@ -31,8 +32,23 @@ const steps: {
 
 export function HowItWorks() {
   return (
-    <section className="relative bg-darker">
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-20 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">
+    <section className="relative overflow-hidden bg-darker">
+      {/* Particle background */}
+      <div className="pointer-events-none absolute inset-0">
+        <Particles
+          particleColors={["#5CB8A8"]}
+          particleCount={250}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={160}
+          sizeRandomness={1}
+          alphaParticles
+          moveParticlesOnHover={false}
+          pixelRatio={2}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col items-center gap-20 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">
         {/* Section title */}
         <motion.div
           variants={staggerContainer}

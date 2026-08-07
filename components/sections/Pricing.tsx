@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { Leaf, Sparkles, Gem, Check, type LucideIcon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check } from "lucide-react";
 import { Button } from "@/components/primitives/Button";
-import { easeOutExpo, fadeUp, scaleIn, staggerContainer, viewportOnce } from "@/lib/motion";
+import { fadeUp, scaleIn, staggerContainer, viewportOnce } from "@/lib/motion";
 
 type Billing = "monthly" | "annually";
 
 type Plan = {
   name: string;
-  icon: LucideIcon;
   monthly: number;
   annually: number;
   tagline: string;
@@ -22,83 +21,49 @@ type Plan = {
 const plans: Plan[] = [
   {
     name: "Free plan",
-    icon: Leaf,
     monthly: 0,
     annually: 0,
-    tagline: "Essential tools to start your daily mental wellness journey",
+    tagline: "Essential tools to begin your daily mental wellness journey",
     features: [
-      "Daily Mood Tracker",
-      "Basic Mental Health Assessment",
-      "Guided Breathing Exercises",
-      "Access to Community Support",
+      "Basic self-assessment (brief stress & anxiety indicators)",
+      "Limited access to Mental Clarity Assistant",
+      "Select guided meditation sessions",
     ],
     cta: "Get Started Free",
   },
   {
-    name: "Basic plan",
-    icon: Sparkles,
+    name: "Premium",
     monthly: 5,
     annually: 48,
-    tagline: "Includes everything in Free, plus more personalized guidance",
+    tagline: "Deeper insights and unlimited support as your needs grow",
     features: [
-      "Unlimited Mood History",
-      "Guided Meditation Library",
-      "Personalized Wellness Insights",
-      "Daily Wellness Reminders",
-      "Progress Analytics Dashboard",
+      "Complete self-assessment with deep insights & trends over time",
+      "Unlimited Mental Clarity Assistant",
+      "Full access to all guided meditation sessions",
+      "Discounts on online counseling sessions",
     ],
-    cta: "Upgrade to Basic",
+    cta: "Upgrade to Premium",
     popular: true,
   },
   {
-    name: "Pro plan",
-    icon: Gem,
+    name: "Professional / Family",
     monthly: 15,
     annually: 144,
-    tagline: "Includes everything in Basic, plus full access to expert therapy",
+    tagline: "Full care with regular counseling and priority support",
     features: [
-      "1-on-1 Professional Consultation",
-      "AI Wellness Assistant",
-      "Personalized Care Plans",
-      "Priority Customer Support",
-      "Exclusive Wellness Programs",
-      "Advanced Progress Reports",
+      "All Premium features",
+      "Regular counseling sessions included in the plan",
+      "Priority support",
     ],
-    cta: "Upgrade to Pro",
+    cta: "Upgrade to Professional",
   },
 ];
 
 export function Pricing() {
   const [billing, setBilling] = useState<Billing>("monthly");
-  const reduce = useReducedMotion();
 
   return (
-    <section id="pricing" className="relative overflow-hidden">
-      {/* Background video with breathing zoom (same as hero) */}
-      <motion.div
-        className="absolute inset-0 -z-10 overflow-hidden"
-        initial={reduce ? { opacity: 0 } : { scale: 1.12, opacity: 0 }}
-        animate={{ scale: reduce ? 1 : 1, opacity: 1 }}
-        transition={
-          reduce
-            ? { duration: 1 }
-            : { scale: { duration: 18, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }, opacity: { duration: 1.2, ease: easeOutExpo } }
-        }
-      >
-        <video
-          className="h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/images/hero-bg.webp"
-        >
-          <source src="/images/hero-video-bg.webm" type="video/webm" />
-        </video>
-        <div className="absolute inset-0 bg-overlay-75" />
-      </motion.div>
-
+    <section id="pricing" className="relative overflow-hidden bg-[#363331]">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-20 px-6 py-24 sm:px-10 md:px-12 md:py-28 lg:py-32">
         {/* Header row: title (left) + toggle (right) */}
         <motion.div
@@ -119,15 +84,13 @@ export function Pricing() {
               variants={fadeUp}
               className="max-w-xl font-display text-[2rem] leading-[1.2] font-semibold tracking-[-0.006em] text-white sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem]"
             >
-              Choose the Plan That Fits Your Wellness Journey
+              Choose the Plan That Fits Your Journey
             </motion.h2>
             <motion.p
               variants={fadeUp}
               className="max-w-xl font-sans text-lg font-normal leading-[1.5] text-white/85"
             >
-              Whether you&apos;re just getting started or looking for more
-              personalized support, choose a plan that helps you care for your
-              mental well-being at your own pace.
+              Start for free, upgrade anytime as your needs grow.
             </motion.p>
           </div>
 
@@ -199,7 +162,6 @@ function BillingToggle({
 }
 
 function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
-  const Icon = plan.icon;
   const price = billing === "monthly" ? plan.monthly : plan.annually;
   const suffix = billing === "monthly" ? "/month" : "/year";
 
@@ -231,13 +193,9 @@ function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
           <span className="font-sans text-xl font-normal text-white">
             {plan.name}
           </span>
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-teal/15 text-teal ring-1 ring-teal/30">
-            <Icon className="h-6 w-6" strokeWidth={2} />
-          </span>
           {plan.popular ? (
             <span className="ml-auto flex items-center gap-2 rounded-full bg-teal/15 px-3 py-1 font-sans text-xl font-semibold text-teal">
               Popular
-              <Sparkles className="h-4 w-4" strokeWidth={2} />
             </span>
           ) : null}
         </div>

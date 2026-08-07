@@ -135,7 +135,7 @@ export function Footer() {
             className="flex flex-col items-center justify-between gap-4 sm:flex-row"
           >
             <span className="font-sans text-sm font-normal text-white/70">
-              © 2026 MentalZee. All rights reserved.
+              © 2026 Mindspace. All rights reserved.
             </span>
 
             {/* Social links */}
