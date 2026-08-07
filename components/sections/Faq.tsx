@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, X } from "lucide-react";
-import { Button } from "@/components/primitives/Button";
 import {
   fadeUp,
   staggerContainer,
@@ -89,27 +88,6 @@ export function Faq() {
               onToggle={() => toggle(i)}
             />
           ))}
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="flex flex-col items-center gap-6 text-center"
-        >
-          <motion.div variants={fadeUp} className="flex flex-col gap-4">
-            <h3 className="font-display text-[2rem] leading-[1.2] font-semibold tracking-[-0.006em] text-white sm:text-4xl md:text-[2.5rem]">
-              Still have questions?
-            </h3>
-            <p className="max-w-xl font-sans text-lg font-normal leading-[1.5] text-white/85">
-              Got more questions or need help choosing a plan? Let&apos;s talk.
-            </p>
-          </motion.div>
-          <motion.div variants={fadeUp}>
-            <Button variant="primary">Contact Us</Button>
-          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -11,6 +11,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { About } from "@/components/sections/About";
 import { Gallery } from "@/components/sections/Gallery";
 import { Faq } from "@/components/sections/Faq";
+import { CtaFooter } from "@/components/sections/CtaFooter";
 import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
         <About />
         <Gallery />
         <Faq />
+        <CtaFooter />
       </main>
       <Footer />
     </>

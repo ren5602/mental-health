@@ -16,7 +16,7 @@ const cards = [
 
 export function Gallery() {
   return (
-    <section className="relative bg-darker">
+    <section className="relative bg-[#363331]">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-10 px-6 pb-10 pt-20 text-center sm:px-10 md:px-12 md:pb-12 md:pt-24 lg:pb-14 lg:pt-28">
         {/* Title */}
         <motion.div
